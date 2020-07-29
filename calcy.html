@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+<style type="text/css">
+
+	.buton,.button{
+		color: white;
+		background:black /*#ffff00*/;
+		width: 50px;
+		height: 40px;
+	}
+	.buton:hover,.button:hover{
+      transform: scale(1.1);
+  }
+	.box{ 
+		width: 202px;
+		height: 50px;
+		margin-bottom: 8px;
+	}
+	.buton{ background-color: blue;
+        width: 103.5px;
+	}
+	div{ border:1px solid white;
+   		 background-color: black/*rgba(0,60,10,0.5)*/; 
+		 width: 17%;
+		 padding: 1em;
+		 height: auto;
+		 box-shadow: 20px 20px 40px grey; 
+	}
+</style>	
+
+</head>
+
+	<center>
+
+<body bgcolor="#0000000" text="gold">
+<h1 style="color: yellow;">My Calculator</h1>
+<div>
+<form name="Calculator">
+    <input type="textfield" name="ans" value="" id="res" class="box">
+<br>	
+	<input type="reset" value="C" class="button">
+	<input type="button" value="Back" name="backspace" onclick="again()" class="button">
+    <input type="button" value="%" onclick="show('%')" class="button">
+    <input type="button" value="/" onclick="show('/')" class="button">
+<br>	
+	<input type="button" value="7" onclick="show('7')" class="button">
+	<input type="button" value="8" onclick="show('8')" class="button">
+	<input type="button" value="9" onclick="show('9')" class="button">
+	<input type="button" value="*" onclick="show('*')" class="button">
+
+<br>
+
+	<input type="button" value="4" onclick="show('4')" class="button">
+	<input type="button" value="5" onclick="show('5')" class="button">
+	<input type="button" value="6" onclick="show('6')" class="button">
+	<input type="button" value="-" onclick="show('-')" class="button">
+<br>
+    
+	<input type="button" value="1" onclick="show('1')" class="button">
+	<input type="button" value="2" onclick="show('2')" class="button">
+	<input type="button" value="3" onclick="show('3')" class="button">
+	<input type="button" value="+" onclick="show('+')" class="button">
+ <br>
+    <input type="button" value="." onclick="show('.')" class="button">
+	<input type="button" value="0" onclick="show('0')" class="button">	
+	<input type="button" value="=" onclick="result()" class="buton">
+</div>	
+<script type="text/javascript">
+
+	function result()
+	{
+		var x=document.getElementById("res").value
+		    var y=eval(x)
+		    document.getElementById("res").value=y	  
+	}
+	function show(no)
+	{  document.getElementById("res").value+=no}
+      
+
+    function again()
+    {
+    	var x=""
+    	x=document.getElementById("res").value
+        var l=x.length - 1;
+        var y=x.substring(0,l);
+        document.getElementById("res").value=y
+    }
+</script>	
+	
+
+</form>
+</center>
+</body>
+</html>
